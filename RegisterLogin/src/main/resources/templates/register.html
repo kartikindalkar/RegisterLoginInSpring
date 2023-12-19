@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<div class="container p-3">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="card">
+						<div class="card-header text-center fs-4">Register Form</div>
+						<th:block th:if="${session.msg}">
+							<p class="text-center text-success">[[${session.msg}]]</p>
+							<th:block th:text="${@userServiceImpl.removeSessionMessage()}"></th:block>
+						</th:block>
+						<div class="card-body">
+						<form class="row g-3" action="saveUser" method="post">
+							<div class="col-md-6">
+								<label for="inputEmail4" class="form-label">Full Name</label>
+								<input type="text" name="name" class="form-control">
+							</div>
+							<div class="col-md-6">
+								<label for="inputEmail4" class="form-label">Email</label>
+								<input type="email" name="email" class="form-control" id="inputEmail4">
+							</div>
+							<div class="col-md-6">
+								<label for="inputPassword4" class="form-label">Password</label>
+								<input type="password" name="password" class="form-control" id="inputPassword4">
+							</div>
+							<div class="col-12">
+								<label for="inputAddress" class="form-label">Mobile Number</label>
+								<input type="text" name="mobileNo" class="form-control" id="mobilenumber">
+							</div>
+							<div class="col-12">
+								<button type="submit" name="submit" class="btn btn-primary">Sign in</button>
+							</div>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>
