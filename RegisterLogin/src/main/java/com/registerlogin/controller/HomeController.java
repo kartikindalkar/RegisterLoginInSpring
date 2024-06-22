@@ -78,10 +78,10 @@ public class HomeController {
 		if(u!=null) {
 			//System.err.println("Save Success");
 			
-			session.setAttribute("msg","Register successfully");
+			session.setAttribute("msg","Register successfully.");
 		}else {
 			//System.out.println("Error in Server");
-			session.setAttribute("msg","Register not successfully");
+			session.setAttribute("msg","Register not successfully.");
 
 		}
 		
@@ -93,9 +93,9 @@ public class HomeController {
 		
 		boolean f = userService.verifyAccount(code);
 		if(f) {
-			m.addAttribute("msg","Sucessfully your account is verified");
+			m.addAttribute("msg","Sucessfully your account is verified.");
 		}else {
-			m.addAttribute("msg","Your verification code is incorrect or already verified ");
+			m.addAttribute("msg","Your verification code is incorrect or already verified.");
 		}
 		
 		return "message";
